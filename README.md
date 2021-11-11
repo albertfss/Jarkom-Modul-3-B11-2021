@@ -5,7 +5,6 @@
 - Albert Filip Silalahi (05111940000116)
 - Jagad Wijaya Purnomo	(05111940000132)
 
-(1),  (2). Luffy dan Zoro menyusun peta tersebut dengan hati-hati dan teliti.
 
 ## Soal 1
 Luffy bersama Zoro berencana membuat peta tersebut dengan kriteria EniesLobby sebagai DNS Server, Jipangu sebagai DHCP Server, Water7 sebagai Proxy Server 
