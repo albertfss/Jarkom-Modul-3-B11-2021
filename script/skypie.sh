@@ -1,11 +1,5 @@
 #!/bin/bash
 
-echo '
-nameserver 192.168.122.1
-# nameserver 192.182.2.2
-# nameserver 192.182.2.3
-# nameserver 192.182.2.4
-' > /etc/resolv.conf
 # Update dan install
 apt update
 apt install php apache2 libapache2-mod-php7.0 wget unzip -y
