@@ -166,7 +166,7 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix
 **Pada Jipangu**
 - Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
 
-  ![04-01](https://user-images.githubusercontent.com/31863229/140906280-9ca9166d-bdac-430c-9657-ec2f6eb80e33.PNG)
+  ![4-1](img/4-1.png)
 - Restart isc-dhcp-server.
 
   ```
@@ -176,11 +176,11 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix
 **Pada TottoLand**
 - Edit file `/etc/network/interfaces` seperti pada gambar berikut:
 
-  ![03-03](https://user-images.githubusercontent.com/31863229/140718537-a8f636ee-9bd3-4423-aaf5-128920e858fc.PNG)
+  ![03-03](img/3-3.png)
 - Restart TottoLand dengan klik stop dan start pada node TottoLand.
 - Lakukan testing pada IP dan nameserver.
 
-  ![04-02](https://user-images.githubusercontent.com/31863229/140906285-c2f44252-7546-4b37-89ed-274608ea0062.PNG)
+  ![4-2](img/4-2.png)
 
 ## Soal 5
 Client mendapatkan DNS dari EniesLobby dan client dapat terhubung dengan internet melalui DNS tersebut.
@@ -194,7 +194,7 @@ Client mendapatkan DNS dari EniesLobby dan client dapat terhubung dengan interne
   ```
 - Edit file `/etc/bind/named.conf.options` seperti pada gambar berikut:
 
-  ![05-01](https://user-images.githubusercontent.com/31863229/140724873-b4a09064-8198-48c9-a18d-e501739872ba.PNG)
+  ![5-1](img/5-1.png)
 - Restart bind9.
 
   ```
@@ -204,22 +204,22 @@ Client mendapatkan DNS dari EniesLobby dan client dapat terhubung dengan interne
 **Pada Loguetown**
 - Lakukan ping `google.com`.
 
-  ![05-02](https://user-images.githubusercontent.com/31863229/140724881-a4b97d8d-dfe9-400f-b41e-c24a8ff762bf.PNG)
+  ![5-2](img/5-2.png)
 
 **Pada Alabasta**
 - Lakukan ping `google.com`.
 
-  ![05-03](https://user-images.githubusercontent.com/31863229/140724883-5ea80709-8bfd-4701-a852-ee3f67ab4671.PNG)
+  ![5-3](img/5-3.png)
 
 **Pada Skypie**
 - Lakukan ping `google.com`.
 
-  ![05-04](https://user-images.githubusercontent.com/31863229/140724887-a509b39f-f006-4595-8cc7-88cce9038d13.PNG)
+  ![5-4](img/5-4.png)
 
 **Pada TottoLand**
 - Lakukan ping `google.com`.
 
-  ![05-05](https://user-images.githubusercontent.com/31863229/140724891-80d278a9-893f-4693-ab40-2b55ea662d4a.PNG)
+  ![5-5](img/5-5.png)
 
 ## Soal 6
 Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 selama 6 menit sedangkan pada client yang melalui Switch3 selama 12 menit. Dengan waktu maksimal yang dialokasikan untuk peminjaman alamat IP selama 120 menit.
@@ -228,9 +228,9 @@ Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 
 **Pada Jipangu**
 - Edit file `/etc/dhcp/dhcpd.conf` pada bagian `default-lease-time` dan `max-lease-time` seperti pada gambar berikut:
 
-  ![03-02](https://user-images.githubusercontent.com/31863229/140905888-4ff3871a-d81c-46c7-82c1-20177952a5e8.PNG)
+  ![3-2](img/3-2.png)
   
-  ![04-01](https://user-images.githubusercontent.com/31863229/140906280-9ca9166d-bdac-430c-9657-ec2f6eb80e33.PNG)
+  ![4-1](img/4-1.png)
 - Restart isc-dhcp-server.
 
   ```
@@ -244,7 +244,7 @@ Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal 
 **Pada Jipangu**
 - Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
   
-  ![04-01](https://user-images.githubusercontent.com/31863229/140906280-9ca9166d-bdac-430c-9657-ec2f6eb80e33.PNG)
+  ![4-1](img/4-1.png)
 - Restart isc-dhcp-server.
 
   ```
@@ -254,11 +254,11 @@ Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal 
 **Pada Skypie**
 - Edit file `/etc/network/interfaces` seperti pada gambar berikut:
 
-  ![07-01](https://user-images.githubusercontent.com/31863229/140727156-ee850176-352b-48f6-b074-24d3ccb2afe7.PNG)
+  ![7-1](img/7-1.png)
 - Restart Skypie dengan klik stop dan start pada node Skypie.
 - Lakukan testing pada IP dan nameserver.
 
-  ![07-02](https://user-images.githubusercontent.com/31863229/140907284-7eeca7ab-b260-4e7a-bd2d-37a81c86d998.PNG)
+  ![7-2](img/7-2.png)
 
 
 ## Soal 8
