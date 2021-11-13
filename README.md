@@ -149,7 +149,8 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
 - Restart Loguetown dengan klik stop dan start pada node Loguetown.
 - Lakukan testing pada IP dan nameserver.
 
-![03-04](img/3-4.png)
+![image](https://user-images.githubusercontent.com/67728406/141645743-0ce54dc5-461b-4b3c-8b80-d0bc3ec4e5b0.png)
+
 
 **Pada Alabasta**
 - Edit file `/etc/network/interfaces` seperti pada gambar berikut:
@@ -157,7 +158,8 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
   ![03-03](/img/3-3.png)
 - Restart Alabasta dengan klik stop dan start pada node Alabasta.
 - Lakukan testing pada IP dan nameserver.
-![03-05](img/3-5.png)
+
+![image](https://user-images.githubusercontent.com/67728406/141645762-693addb4-d58a-4f01-bc56-cba821743b1c.png)		
 
 ## Soal 4
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix IP].3.50.
@@ -166,7 +168,7 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix
 **Pada Jipangu**
 - Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
 
-  ![4-1](img/4-1.png)
+  ![image](https://user-images.githubusercontent.com/67728406/141645858-63e36a0d-fa96-4d8e-87fc-03f11d6e95e5.png)
 - Restart isc-dhcp-server.
 
   ```
@@ -180,7 +182,7 @@ Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix
 - Restart TottoLand dengan klik stop dan start pada node TottoLand.
 - Lakukan testing pada IP dan nameserver.
 
-  ![4-2](img/4-2.png)
+  ![image](https://user-images.githubusercontent.com/67728406/141645897-69316792-4015-4fee-b0b2-e358127ab43e.png)
 
 ## Soal 5
 Client mendapatkan DNS dari EniesLobby dan client dapat terhubung dengan internet melalui DNS tersebut.
@@ -194,7 +196,7 @@ Client mendapatkan DNS dari EniesLobby dan client dapat terhubung dengan interne
   ```
 - Edit file `/etc/bind/named.conf.options` seperti pada gambar berikut:
 
-  ![5-1](img/5-1.png)
+  ![image](https://user-images.githubusercontent.com/67728406/141645926-a1cba692-212d-4cc2-8b60-c95b47469f2f.png)
 - Restart bind9.
 
   ```
