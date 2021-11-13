@@ -13,7 +13,7 @@ Luffy bersama Zoro berencana membuat peta tersebut dengan kriteria EniesLobby se
 
 ### Jawaban
 Membuat topologi sebagai berikut:
-![1_1](img/1,1.png)
+![1_1](img/1_1.png)
 
 Lakukan setting network masing-masing node dengan fitur `Edit network configuration` dengan setting sebagai berikut:
 
@@ -112,7 +112,7 @@ dan Foosha sebagai DHCP Relay.  Luffy dan Zoro menyusun peta tersebut dengan hat
   ```
 - Edit file `/etc/default/isc-dhcp-relay` seperti pada gambar berikut:
 
-  ![2-1](img/2-1.PNG)
+  ![2-1](img/2-1.png)
 - Restart isc-dhcp-relay.
 
   ```
@@ -132,10 +132,10 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
   ```
 - Edit file `/etc/default/isc-dhcp-server` seperti pada gambar berikut:
 
-  ![03-01](img/3-1.PNG)
+  ![03-01](img/3-1.png)
 - Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
 
-  ![03-02](img/3-2.PNG)
+  ![03-02](img/3-2.png)
 - Restart isc-dhcp-server.
 
   ```
@@ -145,16 +145,19 @@ Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix
 **Pada Loguetown**
 - Edit file `/etc/network/interfaces` seperti pada gambar berikut:
 
-  ![03-03](img/3-3.PNG)
+  ![03-03](img/3-3.png)
 - Restart Loguetown dengan klik stop dan start pada node Loguetown.
 - Lakukan testing pada IP dan nameserver.
+
+![03-04](img/3-4.png)
 
 **Pada Alabasta**
 - Edit file `/etc/network/interfaces` seperti pada gambar berikut:
 
-  ![03-03](/img/3-3.PNG)
+  ![03-03](/img/3-3.png)
 - Restart Alabasta dengan klik stop dan start pada node Alabasta.
 - Lakukan testing pada IP dan nameserver.
+![03-05](img/3-5.png)
 
 ## Soal 4
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix IP].3.50 
