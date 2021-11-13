@@ -1,28 +1,164 @@
 # Jarkom-Modul-3-B11-2021
 
 ## **Kelompok B-11**
-- Muhammad Nevin        (05111940000079)
-- Albert Filip Silalahi (05111940000116)
-- Jagad Wijaya Purnomo	(05111940000132)
+|NRP           |Nama                   |
+|:------------:|:---------------------:|
+|05111940000079|Muhammad Nevin         |
+|05111940000116|Albert Filip Silalahi  |
+|05111940000132|Jagad Wijaya Purnomo   |
 
 
 ## Soal 1
 Luffy bersama Zoro berencana membuat peta tersebut dengan kriteria EniesLobby sebagai DNS Server, Jipangu sebagai DHCP Server, Water7 sebagai Proxy Server 
 
 ### Jawaban
+Membuat topologi sebagai berikut:
+![1_1](/img/1,1.png)
 
+Lakukan setting network masing-masing node dengan fitur `Edit network configuration` dengan setting sebagai berikut:
+
+**Foosha (sebagai Router / DHCP Relay)**
+```
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+	address 192.182.1.1
+	netmask 255.255.255.0
+
+auto eth2
+iface eth2 inet static
+	address 192.182.2.1
+	netmask 255.255.255.0
+
+auto eth3
+iface eth3 inet static
+	address 192.182.3.1
+	netmask 255.255.255.0
+```
+
+**Loguetown (sebagai Client)**
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+**Alabasta (sebagai Client)**
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+**EniesLobby (sebagai DNS Master)**
+```
+auto eth0
+iface eth0 inet static
+	address 192.182.2.2
+	netmask 255.255.255.0
+	gateway 192.182.2.1
+```
+
+**Water7 (sebagai Proxy Server)**
+```
+auto eth0
+iface eth0 inet static
+	address 192.182.2.3
+	netmask 255.255.255.0
+	gateway 192.182.2.1
+```
+
+**Jipangu (sebagai DHCP Server)**
+```
+auto eth0
+iface eth0 inet static
+	address 192.182.2.4
+	netmask 255.255.255.0
+	gateway 192.182.2.1
+```
+
+**Skypie (sebagai Client)**
+```
+auto eth0
+iface eth0 inet static
+	address 192.182.3.2
+	netmask 255.255.255.0
+	gateway 192.182.3.1
+```
+
+**TottoLand (sebagai Client)**
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+Ketikkan `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.181.0.0/16` pada router `Foosha`.
+
+Ketikkan `echo nameserver 192.168.122.1 > /etc/resolv.conf` pada node ubuntu yang lain.
+
+Restart semua node dan coba `ping google.com`. Berikut bukti `Jipangu` dapat mengakses internet.
+
+![1_2](/img/1_2.png)
 
 ## Soal 2
 dan Foosha sebagai DHCP Relay.  Luffy dan Zoro menyusun peta tersebut dengan hati-hati dan teliti.
 
 ### Jawaban
+**Pada Foosha**
+- Install aplikasi isc-dhcp-relay.
+
+  ```
+  apt-get install isc-dhcp-relay -y
+  ```
+- Edit file `/etc/default/isc-dhcp-relay` seperti pada gambar berikut:
+
+  ![2-1](/img/2-1.PNG)
+- Restart isc-dhcp-relay.
+
+  ```
+  service isc-dhcp-relay restart
+  ```
 
 
 ## Soal 3
 Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix IP].1.99 dan [prefix IP].1.150 - [prefix IP].1.169
 
 ### Jawaban
+**Pada Jipangu**
+- Install aplikasi isc-dhcp-server.
 
+  ```
+  apt-get install isc-dhcp-server -y
+  ```
+- Edit file `/etc/default/isc-dhcp-server` seperti pada gambar berikut:
+
+  ![03-01](/img/3-1.PNG)
+- Edit file `/etc/dhcp/dhcpd.conf` seperti pada gambar berikut:
+
+  ![03-02](/img/3-2.PNG)
+- Restart isc-dhcp-server.
+
+  ```
+  service isc-dhcp-server restart
+  ```
+
+**Pada Loguetown**
+- Edit file `/etc/network/interfaces` seperti pada gambar berikut:
+
+  ![03-03](/img/3-3.PNG)
+- Restart Loguetown dengan klik stop dan start pada node Loguetown.
+- Lakukan testing pada IP dan nameserver.
+
+  ![03-04](https://user-images.githubusercontent.com/31863229/140905902-162eb453-9291-443b-a9b4-e20e6fffb5ad.PNG)
+
+**Pada Alabasta**
+- Edit file `/etc/network/interfaces` seperti pada gambar berikut:
+
+  ![03-03](/img/3-3.PNG)
+- Restart Alabasta dengan klik stop dan start pada node Alabasta.
+- Lakukan testing pada IP dan nameserver.
+
+  ![03-05](https://user-images.githubusercontent.com/31863229/140905905-58b843fa-f3e5-4254-84d5-31dd83d1091f.PNG)
 
 ## Soal 4
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix IP].3.50 
